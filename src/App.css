@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2em;
+}
+.navbar-brand{
+  font-size: 1.4em;
+}
+.search-container {
+  padding: 20px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* PHOTO COMPONENT CSS */
+.container {
+  position: relative;
+  max-width: 800px; /* Maximum width */
+  padding: 0px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.container img {
+  width: 100%;
+  padding-top: 20px;
+  
+}
+.container .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  padding: 16px; /* Some padding */
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%; 
+
+}
+
+.text-content {
+  margin-right: auto;
+}
+.button-content {
+  margin-left: auto;
+}
+.tag-button {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: transparent;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: 1px solid white;
+  margin-left: 16px;
 }
