@@ -16,8 +16,8 @@ function App() {
       <div className="search-container">
         <SearchBar />
         <Routes>
-          <Route path="/" element={<PhotoList />} />
-          <Route path="/tag/:tagName" element={<PhotoList />} />
+          <Route path="/photosearch" element={<PhotoList />} />
+          <Route path="/photosearch/tag/:tagName" element={<PhotoList />} />
         </Routes>
       </div>
     </PhotoState>

@@ -3,7 +3,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/photosearch">
           <strong>
             <span style={{ color: "#828282" }}>PHOTO</span>
             <span style={{ color: "white" }}>SEARCH</span>

@@ -18,7 +18,7 @@ const SearchBar = () => {
     event.preventDefault();
     if (inputSearch) {
       await getTagSearch(inputSearch);
-      navigate(`/tag/${inputSearch}`);
+      navigate(`/photosearch/tag/${inputSearch}`);
     }
   };
   useEffect(() => {

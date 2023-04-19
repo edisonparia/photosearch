@@ -3,17 +3,33 @@ import PhotoReducer from "./PhotoReducer";
 import PhotoContext from "./PhotoContext";
 import axios from "axios";
 
-import { GET_PHOTOS, GET_SEARCHED_TAG, IS_LOADING, ERROR } from "../types";
+import {
+  GET_PHOTOS,
+  GET_SEARCHED_TAG,
+  IS_LOADING,
+  ERROR,
+  PHOTO_MODAL,
+} from "../types";
 
 const PhotoState = (props) => {
   const initialState = {
-    photos: [],
+    photoList: [],
+    photoModal: null,
     tagSearch: null,
     isLoading: true,
     error: null,
   };
 
   const [state, dispatch] = useReducer(PhotoReducer, initialState);
+
+  const getPhotoModal = (photo) => {
+    if (photo) {
+      dispatch({
+        type: PHOTO_MODAL,
+        payload: photo,
+      });
+    }
+  };
 
   const getTagSearch = async (tag) => {
     dispatch({
@@ -92,19 +108,20 @@ const PhotoState = (props) => {
         type: IS_LOADING,
         payload: false,
       });
-
     }
   };
-  
+
   return (
     <PhotoContext.Provider
       value={{
-        photos: state.photos,
+        photoList: state.photoList,
+        photoModal: state.photoModal,
         tagSearch: state.tagSearch,
         error: state.error,
         isLoading: state.isLoading,
         getPhotos,
         getTagSearch,
+        getPhotoModal,
       }}
     >
       {props.children}
